@@ -95,30 +95,30 @@ namespace MainClass
 
         //Photo du programme
         [Display(Name = "Photo du programme")]
-        public String Photo { get; set; }
+        public String Image { get; set; }
         private ImageGUIDReference ImageReference;
 
         public Programme() 
         {
             NomProgramme = "";
             CodeProgramme = "";
-            Photo = "";
+            Image = "";
             ImageReference = new ImageGUIDReference(@"/Images/Programmes/", @"anonymous.jpg");
         }
 
         public String GetPosterURL()
         {
-            return ImageReference.GetImageURL(Photo);
+            return ImageReference.GetImageURL(Image);
         }
 
         public void UpLoadPoster(HttpRequestBase Request)
         {
-            Photo = ImageReference.UpLoadImage(Request, Photo);
+            Image = ImageReference.UpLoadImage(Request, Image);
         }
 
         public void RemovePoster()
         {
-            ImageReference.Remove(Photo);
+            ImageReference.Remove(Image);
         }
     }
 
